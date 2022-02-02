@@ -6,6 +6,13 @@ app.get('/', (req, res) => {
   res.send("Hello From Root URL")
 })
 
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    'success': true,
+    'health': 'OK'
+  })
+})
+
 app.listen(port, () => {
   console.log(`App is running at port http://localhost:${port}`);
 })
